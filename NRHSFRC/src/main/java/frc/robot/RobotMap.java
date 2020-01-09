@@ -20,7 +20,7 @@ public class RobotMap {
 	// public static int leftMotor = 1;
 	// public static int rightMotor = 2;
 
-	// Talons
+	// Victors
 	public static final int DRIVETRAIN_LEFT_LEAD_VICTOR = 0;
 	public static final int DRIVETRAIN_RIGHT_LEAD_VICTOR = 1;	
 	public static final int DRIVETRAIN_LEFT_FOLLOW_VICTOR = 2;
@@ -32,12 +32,12 @@ public class RobotMap {
 	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1;
 	public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 2;
 
-	// Solenoids
-	public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 0;
-	public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
+	// // Solenoids
+	// public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 0;
+	// public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
 
-	// Switches
-	public static final int SHOOTER_SWITCH = 0;
+	// // Switches
+	// public static final int SHOOTER_SWITCH = 0;
 
 	// Encoders
 	public static final int DRIVETRAIN_DRIVE_ENCODER_A = 1;
