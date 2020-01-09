@@ -36,10 +36,10 @@ public class Drivetrain extends Subsystem {
 
 	public Drivetrain() {
 		// Talons
-		leftLead = new PWMVictorSPX(0);
-		leftFollow = new PWMVictorSPX(0);
-		rightLead = new PWMVictorSPX(0);
-		rightFollow = new PWMVictorSPX(0);
+		leftLead = new PWMVictorSPX(RobotMap.DRIVETRAIN_LEFT_LEAD_VICTOR);
+		leftFollow = new PWMVictorSPX(RobotMap.DRIVETRAIN_LEFT_FOLLOW_VICTOR);
+		rightLead = new PWMVictorSPX(RobotMap.DRIVETRAIN_RIGHT_LEAD_VICTOR);
+		rightFollow = new PWMVictorSPX(RobotMap.DRIVETRAIN_RIGHT_FOLLOW_VICTOR);
 
 		SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftLead, leftFollow);
 		SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightLead, rightFollow);
