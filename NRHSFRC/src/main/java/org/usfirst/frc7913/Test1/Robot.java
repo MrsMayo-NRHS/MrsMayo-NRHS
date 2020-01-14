@@ -28,7 +28,6 @@ public class Robot extends TimedRobot {
 
     public static OI oi;
     public static driveTrain driveTrain;
-    public static Hatch hatch;
     private final I2C.Port i2cPort = I2C.Port.kOnboard;
     private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
     private final ColorMatch m_colorMatcher = new ColorMatch();
@@ -45,7 +44,6 @@ public class Robot extends TimedRobot {
     public void robotInit() {
 
         driveTrain = new driveTrain();
-        hatch = new Hatch();
         //CameraServer.getInstance().startAutomaticCapture(0);
         //CameraServer.getInstance().startAutomaticCapture(1);
         oi = new OI();
