@@ -1,9 +1,9 @@
 package org.usfirst.frc7913.Test1.subsystems;
-import org.usfirst.frc7913.Test1.Robot;
+//import org.usfirst.frc7913.Test1.Robot;
 import org.usfirst.frc7913.Test1.commands.*;
 //import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.GenericHID;
+//import edu.wpi.first.wpilibj.GenericHID;
 //import edu.wpi.first.wpilibj.PIDOutput;
 //import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
@@ -13,14 +13,14 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 //import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class driveTrain extends Subsystem {
+    //Victors
     private PWMVictorSPX leftLead;
     private PWMVictorSPX leftFollow;
-    private SpeedControllerGroup leftSide;
     private PWMVictorSPX rightLead;
     private PWMVictorSPX rightFollow;
-    private SpeedControllerGroup rightSide;
-    private PWMVictorSPX lift;
 
+    private SpeedControllerGroup leftSide;
+    private SpeedControllerGroup rightSide;
     private DifferentialDrive driveTrain;
 
     public driveTrain() {
@@ -41,8 +41,6 @@ public class driveTrain extends Subsystem {
         addChild("rightFollow",rightFollow);
         rightFollow.setInverted(false);
         rightSide = new SpeedControllerGroup(rightLead, rightFollow);
-
-        lift = new PWMVictorSPX(4);
         
         driveTrain = new DifferentialDrive(leftSide, rightSide);
         
@@ -51,20 +49,20 @@ public class driveTrain extends Subsystem {
         driveTrain.setMaxOutput(1.0);
     }
 
+	public void arcadeDrive(double moveSpeed, double rotateSpeed) {
+		driveTrain.arcadeDrive(moveSpeed, rotateSpeed);
+    }
+    
+    public void tankDrive(double leftSpeed, double rightSpeed) {
+		driveTrain.tankDrive(leftSpeed, rightSpeed);
+	}
+
     @Override
     public void initDefaultCommand() {
         setDefaultCommand(new drive());
-    }
+    }  
 
     @Override
     public void periodic() {
-        //Top speed control
-        double d = (Robot.oi.joystickx30.getThrottle() + 2) / 2.25;
-
-        //Line that sets speed of motors
-        driveTrain.arcadeDrive(Robot.oi.joystickx30.getY() * d, Robot.oi.joystickx30.getX() * d);
-        
-        //Sets speed of lift motor
-        lift.setSpeed(Robot.oi.xboxController.getY(GenericHID.Hand.kLeft) / 1);
     }
 }

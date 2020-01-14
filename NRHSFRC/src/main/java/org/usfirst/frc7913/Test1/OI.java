@@ -18,13 +18,11 @@ public class OI {
     public JoystickButton button5;
     public JoystickButton button6;
     public JoystickButton button7;
-    public Joystick joystickx30;
-    public Joystick xboxController;
+    public Joystick driverController;
     boolean status = true;
 
     public OI() {
-        xboxController = new Joystick(1);
-        joystickx30 = new Joystick(0); 
+        driverController = new Joystick(0);
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
@@ -32,10 +30,7 @@ public class OI {
 
     }
 
-    public Joystick getjoystickx30() {
-        return joystickx30;
-    }
-    public Joystick getXboxController() {
-        return xboxController;
+    public Joystick getDriverController() {
+        return driverController;
     }
 }
