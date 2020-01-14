@@ -45,7 +45,7 @@ public class driveTrain extends Subsystem {
         lift = new PWMVictorSPX(4);
         
         driveTrain = new DifferentialDrive(leftSide, rightSide);
-        
+        //test
         driveTrain.setSafetyEnabled(true);
         driveTrain.setExpiration(0.1);
         driveTrain.setMaxOutput(1.0);
