@@ -1,16 +1,9 @@
 package org.usfirst.frc7913.Test1.subsystems;
-//import org.usfirst.frc7913.Test1.Robot;
 import org.usfirst.frc7913.Test1.commands.*;
-//import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
-//import edu.wpi.first.wpilibj.GenericHID;
-//import edu.wpi.first.wpilibj.PIDOutput;
-//import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-//import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-//import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class driveTrain extends Subsystem {
     //Victors
@@ -49,10 +42,12 @@ public class driveTrain extends Subsystem {
         driveTrain.setMaxOutput(1.0);
     }
 
+    //Drive type for one joystick/automated driving
 	public void arcadeDrive(double moveSpeed, double rotateSpeed) {
 		driveTrain.arcadeDrive(moveSpeed, rotateSpeed);
     }
     
+    //Drive type for two joysticks/manual driving
     public void tankDrive(double leftSpeed, double rightSpeed) {
 		driveTrain.tankDrive(leftSpeed, rightSpeed);
 	}
