@@ -10,7 +10,8 @@
 
 
 package org.usfirst.frc7913.Test1.commands;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+//import edu.wpi.first.wpilibj.Sendable;
+//import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc7913.Test1.Robot;
 
@@ -44,11 +45,19 @@ public class drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        double leftSpeed = Robot.oi.driverController.getY(Hand.kLeft);
-        double rightSpeed = Robot.oi.driverController.getY(Hand.kRight);
+        double leftSpeed = Robot.oi.driverController.getRawAxis(1)/1.25;
+        double rightSpeed = Robot.oi.driverController.getRawAxis(5)/1.25;
      
         Robot.driveTrain.tankDrive(leftSpeed, rightSpeed);
     }
+
+    public static void right90() {
+        long t = System.currentTimeMillis();
+        long end = t + 750;
+        while (System.currentTimeMillis() < end) {
+           Robot.driveTrain.arcadeDrive(0, 0.3); 
+        }
+    }    
 
     // Make this return true when this Command no longer needs to run execute()
     @Override

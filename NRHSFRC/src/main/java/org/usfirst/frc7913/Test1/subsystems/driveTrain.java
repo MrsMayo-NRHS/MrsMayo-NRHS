@@ -20,19 +20,19 @@ public class driveTrain extends Subsystem {
         //Left motors
         leftLead = new PWMVictorSPX(0);
         addChild("leftLead",leftLead);
-        leftLead.setInverted(false);
+        leftLead.setInverted(true);
         leftFollow = new PWMVictorSPX(2);
         addChild("leftFollow",leftFollow);
-        leftFollow.setInverted(false);
+        leftFollow.setInverted(true);
         leftSide = new SpeedControllerGroup(leftLead, leftFollow);
 
         //Right motors
         rightLead = new PWMVictorSPX(1);
         addChild("rightLead",rightLead);
-        rightLead.setInverted(false);
+        rightLead.setInverted(true);
         rightFollow = new PWMVictorSPX(3);
         addChild("rightFollow",rightFollow);
-        rightFollow.setInverted(false);
+        rightFollow.setInverted(true);
         rightSide = new SpeedControllerGroup(rightLead, rightFollow);
         
         driveTrain = new DifferentialDrive(leftSide, rightSide);
