@@ -24,9 +24,9 @@ public class OI {
     boolean status = true;
 
     public OI() {
-        button1.whenPressed(new leftTurn());
-        button6.whenPressed(new rightTurn());
-        button7.whenPressed(new speedChange());
+        button5.whileHeld(new leftPivot());
+        button6.whileHeld(new rightPivot());
+        button7.whileHeld(new speedChange());
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("drive", new drive());

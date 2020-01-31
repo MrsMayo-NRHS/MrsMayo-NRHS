@@ -43,7 +43,7 @@ public class leftTurn extends Command {
         long t = System.currentTimeMillis();
         long end = t + 750;
         while (System.currentTimeMillis() < end) {
-           Robot.driveTrain.arcadeDrive(0, -0.3); 
+           Robot.driveTrain.arcadeDrive(0, 0.3); 
         }
     }
 
