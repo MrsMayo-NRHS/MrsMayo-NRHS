@@ -12,20 +12,21 @@ import edu.wpi.first.wpilibj.buttons.*;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-
-    public JoystickButton button1;
-    public JoystickButton button2;
-    public JoystickButton button3;
-    public JoystickButton button4;
-    public JoystickButton button5;
-    public JoystickButton button6;
-    public JoystickButton button7;
-    public Joystick driverController;
+    
+    public Joystick driverController = new Joystick(0);
+    public JoystickButton button1 = new JoystickButton(driverController, 1);
+    public JoystickButton button2 = new JoystickButton(driverController, 2);
+    public JoystickButton button3 = new JoystickButton(driverController, 3);
+    public JoystickButton button4 = new JoystickButton(driverController, 4);
+    public JoystickButton button5 = new JoystickButton(driverController, 5);
+    public JoystickButton button6 = new JoystickButton(driverController, 6);
+    public JoystickButton button7 = new JoystickButton(driverController, 7);
     boolean status = true;
 
     public OI() {
-        driverController = new Joystick(0);
-
+        button1.whenPressed(new leftTurn());
+        button6.whenPressed(new rightTurn());
+        button7.whenPressed(new speedChange());
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("drive", new drive());

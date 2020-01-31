@@ -16,6 +16,8 @@ public class driveTrain extends Subsystem {
     private SpeedControllerGroup rightSide;
     private DifferentialDrive driveTrain;
 
+    public boolean isSlow = false;
+
     public driveTrain() {
         //Left motors
         leftLead = new PWMVictorSPX(0);
@@ -49,8 +51,21 @@ public class driveTrain extends Subsystem {
     
     //Drive type for two joysticks/manual driving
     public void tankDrive(double leftSpeed, double rightSpeed) {
-		driveTrain.tankDrive(leftSpeed, rightSpeed);
-	}
+        if(this.isSlow){
+            driveTrain.tankDrive(leftSpeed * .3, rightSpeed * .3);
+        } else {
+            driveTrain.tankDrive(leftSpeed, rightSpeed);
+        }
+        
+    }
+    
+    public void switchIsSlow(){
+        if(this.isSlow){
+            this.isSlow = false;
+        } else {
+            this.isSlow = true;
+        }
+    }
 
     @Override
     public void initDefaultCommand() {
