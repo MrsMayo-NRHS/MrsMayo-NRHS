@@ -24,6 +24,8 @@ public class OI {
     boolean status = true;
 
     public OI() {
+        button1.whenPressed(new startWinchMotor());
+        button4.whenPressed(new stopWinchMotor());
         button5.whileHeld(new leftPivot());
         button6.whileHeld(new rightPivot());
         button7.whileHeld(new speedChange());
