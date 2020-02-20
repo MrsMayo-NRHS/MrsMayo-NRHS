@@ -25,6 +25,7 @@ public class OI {
 
     public OI() {
         button1.whenPressed(new startWinchMotor());
+        button2.whenPressed(new reverseWinchMotor());
         button4.whenPressed(new stopWinchMotor());
         button5.whileHeld(new leftPivot());
         button6.whileHeld(new rightPivot());

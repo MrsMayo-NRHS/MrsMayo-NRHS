@@ -8,7 +8,7 @@ public class winchControl extends Subsystem {
 
     public winchControl() {
         //Left motors
-        motor = new PWMVictorSPX(4);
+        motor = new PWMVictorSPX(2);
     }
     
     public void forwardMotor(){
@@ -16,7 +16,7 @@ public class winchControl extends Subsystem {
     }
 
     public void backwardMotor(){
-        motor.set(0.4);
+        motor.set(-0.4);
     }
 
     public void stopMotor(){
