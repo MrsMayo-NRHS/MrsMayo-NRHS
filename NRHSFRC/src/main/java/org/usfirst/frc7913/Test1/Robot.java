@@ -27,6 +27,7 @@ public class Robot extends TimedRobot {
     public static OI oi;
     public static driveTrain driveTrain;
     public static winchControl winchControl;
+    public static intakeSystem intakeSystem;
     private final I2C.Port i2cPort = I2C.Port.kOnboard;
     private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
     private final ColorMatch m_colorMatcher = new ColorMatch();
@@ -44,6 +45,8 @@ public class Robot extends TimedRobot {
 
         driveTrain = new driveTrain();
         winchControl = new winchControl();
+        intakeSystem = new intakeSystem();
+
         //CameraServer.getInstance().startAutomaticCapture(0);
         //CameraServer.getInstance().startAutomaticCapture(1);
         oi = new OI();
@@ -52,10 +55,10 @@ public class Robot extends TimedRobot {
 
         SmartDashboard.putData("Auto mode", chooser);
 
-        m_colorMatcher.addColorMatch(kBlueTarget);
-        m_colorMatcher.addColorMatch(kGreenTarget);
-        m_colorMatcher.addColorMatch(kRedTarget);
-        m_colorMatcher.addColorMatch(kYellowTarget);         
+        // m_colorMatcher.addColorMatch(kBlueTarget);
+        // m_colorMatcher.addColorMatch(kGreenTarget);
+        // m_colorMatcher.addColorMatch(kRedTarget);
+        // m_colorMatcher.addColorMatch(kYellowTarget);         
     }
 
     @Override
@@ -70,27 +73,27 @@ public class Robot extends TimedRobot {
        * an object is the more light from the surroundings will bleed into the 
        * measurements and make it difficult to accurately determine its color.
        */
-      Color detectedColor = m_colorSensor.getColor();
-      String colorString;
-      ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
+      // Color detectedColor = m_colorSensor.getColor();
+      // String colorString;
+      // ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
 
-      if (match.color == kBlueTarget) {
-        colorString = "Blue";
-      } else if (match.color == kRedTarget) {
-        colorString = "Red";
-      } else if (match.color == kGreenTarget) {
-        colorString = "Green";
-      } else if (match.color == kYellowTarget) {
-        colorString = "Yellow";
-      } else {
-        colorString = "Unknown";
-      }
+      // if (match.color == kBlueTarget) {
+      //   colorString = "Blue";
+      // } else if (match.color == kRedTarget) {
+      //   colorString = "Red";
+      // } else if (match.color == kGreenTarget) {
+      //   colorString = "Green";
+      // } else if (match.color == kYellowTarget) {
+      //   colorString = "Yellow";
+      // } else {
+      //   colorString = "Unknown";
+      // }
 
-      SmartDashboard.putNumber("Red", detectedColor.red);
-      SmartDashboard.putNumber("Green", detectedColor.green);
-      SmartDashboard.putNumber("Blue", detectedColor.blue);
-      SmartDashboard.putNumber("Confidence", match.confidence);
-      SmartDashboard.putString("Detected Color", colorString);
+      // SmartDashboard.putNumber("Red", detectedColor.red);
+      // SmartDashboard.putNumber("Green", detectedColor.green);
+      // SmartDashboard.putNumber("Blue", detectedColor.blue);
+      // SmartDashboard.putNumber("Confidence", match.confidence);
+      // SmartDashboard.putString("Detected Color", colorString);
     }
 
     /**
