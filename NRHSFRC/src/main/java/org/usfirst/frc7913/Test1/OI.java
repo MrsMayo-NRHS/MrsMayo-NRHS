@@ -2,7 +2,7 @@ package org.usfirst.frc7913.Test1;
 import org.usfirst.frc7913.Test1.commands.*;
 //import org.usfirst.frc7913.Test1.subsystems.driveTrain;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 //import org.usfirst.frc7913.Test1.subsystems.*;
@@ -21,20 +21,18 @@ public class OI {
     public JoystickButton button5 = new JoystickButton(driverController, 5);
     public JoystickButton button6 = new JoystickButton(driverController, 6);
     public JoystickButton button7 = new JoystickButton(driverController, 7);
-    boolean reverse = false;
+    public boolean reverse = false;
 
     public OI() {
 
-        button1.whenPressed(new upIntakeMotor());
-        button1.whenReleased(new stopIntakeMotor());
+        button6.whenPressed(new upIntakeMotor());
+        button6.whenReleased(new stopIntakeMotor());
         button2.whenPressed(new startWinchMotor());
         button2.whenReleased(new stopWinchMotor());
-        button3.whenPressed(this.reverse = true);
-        button3.whenReleased(this.reverse = false);
-        button4.whenPressed(new downIntakeMotor());
-        button4.whenReleased(new stopIntakeMotor());
-        button5.whileHeld(new leftPivot());
-        button6.whileHeld(new rightPivot());
+        button3.whenPressed(new setReverse());
+        button3.whenReleased(new setReverse());
+        button5.whenPressed(new downIntakeMotor());
+        button5.whenReleased(new stopIntakeMotor());
 
 
         // button1.whenPressed(new upPivotMotor());
@@ -49,9 +47,13 @@ public class OI {
         // button6.whileHeld(new rightPivot());
         // button7.whileHeld(new speedChange());
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-        SmartDashboard.putData("drive", new drive());
+        // SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+        // SmartDashboard.putData("drive", new drive());
 
+    }
+
+    public void setReverse(boolean setVar){
+        this.reverse = setVar;
     }
 
     public Joystick getDriverController() {

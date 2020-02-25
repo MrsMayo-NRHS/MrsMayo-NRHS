@@ -1,4 +1,7 @@
 package org.usfirst.frc7913.Test1.commands;
+
+import org.usfirst.frc7913.Test1.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 /**
  *

@@ -1,4 +1,5 @@
 package org.usfirst.frc7913.Test1.subsystems;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import edu.wpi.first.wpilibj.PWMVictorSPX;
@@ -15,11 +16,15 @@ public class intakeSystem extends Subsystem {
     }
 
     public void upIntakeMotor(){
-        intakeMotor.setSpeed(0.6);
+        intakeMotor.setSpeed(1);
+    }
+
+    public void setPivotMotor(double curSpeed){
+        pivotMotor.setSpeed(curSpeed);
     }
 
     public void downIntakeMotor(){
-        intakeMotor.setSpeed(-0.6);
+        intakeMotor.setSpeed(-1);
     }
 
     public void stopIntakeMotor(){
@@ -27,11 +32,11 @@ public class intakeSystem extends Subsystem {
     }
 
     public void upPivotMotor(){
-        pivotMotor.setSpeed(0.25);
+        pivotMotor.setSpeed(0.45);
     }
 
     public void downPivotMotor(){
-        pivotMotor.setSpeed(-0.25);
+        pivotMotor.setSpeed(-0.45);
     }
 
     public void stopPivotMotor(){
@@ -39,7 +44,7 @@ public class intakeSystem extends Subsystem {
     }
     @Override
     public void initDefaultCommand() {
-        setDefaultCommand(new monitorPivotMotor());
+        //setDefaultCommand(new monitorPivotMotor());
     }
 
     @Override

@@ -52,7 +52,7 @@ public class driveTrain extends Subsystem {
     //Drive type for two joysticks/manual driving
     public void tankDrive(double leftSpeed, double rightSpeed) {
         if(this.isSlow){
-            driveTrain.tankDrive(leftSpeed * .4, rightSpeed * .4);
+            driveTrain.tankDrive(leftSpeed, rightSpeed);
         } else {
             driveTrain.tankDrive(leftSpeed, rightSpeed);
         }

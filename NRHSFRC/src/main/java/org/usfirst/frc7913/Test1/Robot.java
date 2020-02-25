@@ -4,13 +4,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc7913.Test1.commands.*;
+//import org.usfirst.frc7913.Test1.commands.*;
 import org.usfirst.frc7913.Test1.subsystems.*;
-import com.revrobotics.ColorSensorV3;
-import com.revrobotics.ColorMatchResult;
-import com.revrobotics.ColorMatch;
-import edu.wpi.first.wpilibj.I2C;
-import edu.wpi.first.wpilibj.util.Color;
+//import com.revrobotics.ColorSensorV3;
+//import com.revrobotics.ColorMatchResult;
+//import com.revrobotics.ColorMatch;
+//import edu.wpi.first.wpilibj.I2C;
+//import edu.wpi.first.wpilibj.util.Color;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,13 +28,13 @@ public class Robot extends TimedRobot {
     public static driveTrain driveTrain;
     public static winchControl winchControl;
     public static intakeSystem intakeSystem;
-    private final I2C.Port i2cPort = I2C.Port.kOnboard;
-    private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
-    private final ColorMatch m_colorMatcher = new ColorMatch();
-    private final Color kBlueTarget = ColorMatch.makeColor(0.143, 0.427, 0.429);
-    private final Color kGreenTarget = ColorMatch.makeColor(0.197, 0.561, 0.240);
-    private final Color kRedTarget = ColorMatch.makeColor(0.561, 0.232, 0.114);
-    private final Color kYellowTarget = ColorMatch.makeColor(0.361, 0.524, 0.113);    
+    //private final I2C.Port i2cPort = I2C.Port.kOnboard;
+    // private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
+    // private final ColorMatch m_colorMatcher = new ColorMatch();
+    // private final Color kBlueTarget = ColorMatch.makeColor(0.143, 0.427, 0.429);
+    // private final Color kGreenTarget = ColorMatch.makeColor(0.197, 0.561, 0.240);
+    // private final Color kRedTarget = ColorMatch.makeColor(0.561, 0.232, 0.114);
+    // private final Color kYellowTarget = ColorMatch.makeColor(0.361, 0.524, 0.113);    
     
     /**
      * This function is run when the robot is first started up and should be
@@ -51,7 +51,7 @@ public class Robot extends TimedRobot {
         //CameraServer.getInstance().startAutomaticCapture(1);
         oi = new OI();
 
-        chooser.setDefaultOption("Autonomous Command", new AutonomousCommand());
+        //chooser.setDefaultOption("Autonomous Command", new AutonomousCommand());
 
         SmartDashboard.putData("Auto mode", chooser);
 

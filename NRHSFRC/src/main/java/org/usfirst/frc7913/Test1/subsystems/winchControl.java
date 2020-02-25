@@ -1,8 +1,6 @@
 package org.usfirst.frc7913.Test1.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-import org.usfirst.frc7913.Test1.commands.startWinchMotor;
-
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 
 public class winchControl extends Subsystem {
@@ -14,9 +12,9 @@ public class winchControl extends Subsystem {
         motor = new PWMVictorSPX(4);
     }
 
-    public void setMotorSpeed(double curSpeed){
-        motor.set(curSpeed);
-    }
+    // public void setMotorSpeed(double curSpeed){
+    //     motor.set(curSpeed);
+    // }
 
     public void forwardMotor(){
         motor.set(0.6);
@@ -32,7 +30,6 @@ public class winchControl extends Subsystem {
 
     @Override
     public void initDefaultCommand() {
-        setDefaultCommand(new startWinchMotor());
     }
 
     @Override
