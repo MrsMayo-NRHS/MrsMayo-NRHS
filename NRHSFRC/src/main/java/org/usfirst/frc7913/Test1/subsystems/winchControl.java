@@ -13,13 +13,13 @@ public class winchControl extends Subsystem {
         //Left motors
         motor = new PWMVictorSPX(4);
     }
-    
+
     public void setMotorSpeed(double curSpeed){
         motor.set(curSpeed);
     }
 
     public void forwardMotor(){
-        motor.set(0.4);
+        motor.set(0.6);
     }
 
     public void backwardMotor(){
@@ -32,8 +32,8 @@ public class winchControl extends Subsystem {
 
     @Override
     public void initDefaultCommand() {
-        setDefaultCommand(new startWinchMotor());        
-    }  
+        setDefaultCommand(new startWinchMotor());
+    }
 
     @Override
     public void periodic() {

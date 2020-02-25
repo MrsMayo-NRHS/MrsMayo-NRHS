@@ -38,8 +38,9 @@ public class intakeSystem extends Subsystem {
         pivotMotor.setSpeed(0);
     }
     @Override
-    public void initDefaultCommand() {     
-    }  
+    public void initDefaultCommand() {
+        setDefaultCommand(new monitorPivotMotor());
+    }
 
     @Override
     public void periodic() {
