@@ -3,13 +3,18 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutonomousCommand extends Command {
-    public AutonomousCommand() {
+public class autoMove extends Command {
+    public autoMove() {
     }
 
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+      long t = System.currentTimeMillis();
+      long end = t + 1250;
+      while (System.currentTimeMillis() < end) {
+         Robot.driveTrain.arcadeDrive(0.25, 0);
+      }
     }
 
     // Called repeatedly when this Command is scheduled to run
